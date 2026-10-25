@@ -105,7 +105,7 @@
 
   <div class="eyebrow">Documentation Hub <span id="pageUpdated"></span></div>
   <h1>옥션허브(AuctionFlow Pro) — 문서 모음</h1>
-  <p class="lede">법원 경매 물건을 단계별로 관리하는 로컬 우선 Next.js 앱 — 실행 방법, 개발 현황, 공공 API 가이드.</p>
+  <p class="lede">법원 경매 물건을 단계별로 관리하는 로컬 우선 Next.js 앱 — 개발 현황·기록, 설계 문서, 점검 리포트, 운영 가이드.</p>
   <a class="back" href="https://peter-cho-70.github.io/">← 문서 허브로 돌아가기</a>
 
   <div class="filter-wrap">
@@ -133,7 +133,7 @@
       <a class="doc" href="viewer.html?file=DEVLOG.md" data-tags="devlog 개발 변천사 히스토리 타임라인">
         <span class="doc-title">개발 기록 (DEVLOG)</span>
         <span class="chip live">현행</span>
-        <span class="doc-desc">날짜별 개발 타임라인 — 새 항목은 맨 위/맨 아래에 계속 append.</span>
+        <span class="doc-desc">날짜별 개발 타임라인 — <b>최신 항목이 맨 위</b>.</span>
         <span class="doc-path">doc/DEVLOG.md</span>
       </a>
       <!-- 필요하면 doc/IDEAS.md(아이디어 백로그) 카드도 이 자리에 추가 -->
@@ -142,8 +142,107 @@
 
     <!-- ── 섹션 3: doc/guide/ 또는 doc/data/ — 학습 자료 or 콘텐츠 데이터. 프로젝트 성격에 맞게 폴더명·제목 선택 ── -->
   <section data-sec>
+    <h2>🧭 기획 · 설계 <span class="folder">doc/spec/</span></h2>
+    <p class="section-desc">2026-10-25에 구현한 기능의 설계 근거 — 무엇을, 왜, 어떻게.</p>
+    <div class="doc-list">
+      <a class="doc" href="viewer.html?file=spec/DATA-PROTECTION-DESIGN.md" data-tags="백업 복구 소실 보호 디스크 persist">
+        <span class="doc-title">데이터 보호 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">디스크 백업·저장 보호 장치·복구 배너·새로 시작 직전 백업.</span>
+        <span class="doc-path">doc/spec/DATA-PROTECTION-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/STORAGE-SLIM-DESIGN.md" data-tags="용량 localStorage 슬림 저장">
+        <span class="doc-title">저장 용량 줄이기 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">기본값과 같은 리모델링 단계를 저장에서 빼 약 63% 감소.</span>
+        <span class="doc-path">doc/spec/STORAGE-SLIM-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/SCOUTING-SCORE-DESIGN.md" data-tags="임장 후보 점수 검색방향 별">
+        <span class="doc-title">임장 후보 점수 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">12개 기준·가중 평균·커버리지·추천 규칙·별 색상.</span>
+        <span class="doc-path">doc/spec/SCOUTING-SCORE-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/SCOUTING-MAP-ROUTE-DESIGN.md" data-tags="지도 동선 경로 임장 leaflet">
+        <span class="doc-title">지도·임장 동선 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">지오코딩, 정확한 최단 순서(12곳 이하), 이동·방문 시간 추정.</span>
+        <span class="doc-path">doc/spec/SCOUTING-MAP-ROUTE-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/AUTO-SCOUT-DESIGN.md" data-tags="자동 임장 수집 속도 제한">
+        <span class="doc-title">자동 임장물건 찾기 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">부담을 줄이는 속도 제한·대상 선정·중단 조건.</span>
+        <span class="doc-path">doc/spec/AUTO-SCOUT-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/TAEIN-INTEGRATION-DESIGN.md" data-tags="태인 수익률 권리분석 전입세대">
+        <span class="doc-title">태인 연동·수익률 계산식 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">권리분석·수익률 계산기·전입세대열람 수집과 계산식 분석.</span>
+        <span class="doc-path">doc/spec/TAEIN-INTEGRATION-DESIGN.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=spec/TENANT-VIEW-DESIGN.md" data-tags="임차인 호실 배당 월세">
+        <span class="doc-title">임차관계 표시 설계 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">호실 기준 정리, 전입 순위·고액·LH·미배당·소액·월세 표시.</span>
+        <span class="doc-path">doc/spec/TENANT-VIEW-DESIGN.md</span>
+      </a>
+    </div>
+  </section>
+
+  <section data-sec>
+    <h2>🔎 점검 리포트 <span class="folder">doc/report/</span></h2>
+    <p class="section-desc">조사와 검증 결과 — 사실과 미확인 사항을 구분.</p>
+    <div class="doc-list">
+      <a class="doc" href="viewer.html?file=report/2026-10-25-data-loss-investigation.md" data-tags="소실 조사 원인 백업">
+        <span class="doc-title">물건 목록 소실 조사 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">확인된 사실, 후보 원인(확정 아님), 대응, 교훈.</span>
+        <span class="doc-path">doc/report/2026-10-25-data-loss-investigation.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=report/2026-10-25-verification.md" data-tags="검증 테스트 결과">
+        <span class="doc-title">개발 검증 결과 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">기능별 검증 방법·결과·검증하지 못한 것.</span>
+        <span class="doc-path">doc/report/2026-10-25-verification.md</span>
+      </a>
+    </div>
+  </section>
+
+  <section data-sec>
+    <h2>📋 업무 흐름 · 요구사항 <span class="folder">doc/workflow/</span></h2>
+    <p class="section-desc">경매 업무 흐름, 스크리닝·수집 요구사항, 데이터 위치.</p>
+    <div class="doc-list">
+      <a class="doc" href="viewer.html?file=workflow/AUCTION_WORKFLOW.md" data-tags="흐름 단계 프로세스">
+        <span class="doc-title">경매 업무 흐름 <span class="ver">기존</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">단계별 업무 흐름 정리.</span>
+        <span class="doc-path">doc/workflow/AUCTION_WORKFLOW.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=workflow/PROPERTY_SCREENING_PRD.md" data-tags="스크리닝 prd 판정">
+        <span class="doc-title">물건 스크리닝 PRD <span class="ver">기존</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">판정 기준과 위험 신호 설계.</span>
+        <span class="doc-path">doc/workflow/PROPERTY_SCREENING_PRD.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=workflow/AUCTION_COLLECTOR_INTEGRATION_PRD.md" data-tags="수집 연동 prd">
+        <span class="doc-title">경매 수집 연동 PRD <span class="ver">기존</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">수집기 연동 요구사항.</span>
+        <span class="doc-path">doc/workflow/AUCTION_COLLECTOR_INTEGRATION_PRD.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=workflow/DATA_LOCATION.md" data-tags="데이터 위치 저장">
+        <span class="doc-title">내 데이터는 어디에 있나 <span class="ver">기존</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">브라우저·디스크 등 데이터 저장 위치.</span>
+        <span class="doc-path">doc/workflow/DATA_LOCATION.md</span>
+      </a>
+    </div>
+  </section>
+
+  <section data-sec>
     <h2>📖 학습 · 참고 자료 <span class="folder">doc/guide/</span></h2>
-    <p class="section-desc">실행 방법과 외부 API 연동 가이드.</p>
+    <p class="section-desc">실행·운영·화면 안내, 용어집, 외부 API 연동 가이드.</p>
     <div class="doc-list">
       <a class="doc" href="viewer.html?file=guide/RUN.md" data-tags="실행 방법 설치 npm dev localhost 환경변수 env 문제해결">
         <span class="doc-title">실행 방법 <span class="ver">2026-10-25</span></span>
@@ -156,6 +255,24 @@
         <span class="chip live">현행</span>
         <span class="doc-desc">도로명주소·국토부·네이버 지도 API 키 발급과 연동.</span>
         <span class="doc-path">doc/guide/ADDRESS_PUBLIC_API.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=guide/OPERATIONS.md" data-tags="운영 백업 복구 서버">
+        <span class="doc-title">운영 가이드 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">서버 실행, 백업 확인, 복구 절차, 자동 찾기 운영.</span>
+        <span class="doc-path">doc/guide/OPERATIONS.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=guide/UI-GUIDE.md" data-tags="화면 사용법 ui">
+        <span class="doc-title">화면 사용 가이드 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">메뉴·목록·상세·임장·지도 화면 사용법.</span>
+        <span class="doc-path">doc/guide/UI-GUIDE.md</span>
+      </a>
+      <a class="doc" href="viewer.html?file=guide/GLOSSARY.md" data-tags="용어 사전 glossary">
+        <span class="doc-title">용어집 <span class="ver">2026-10-25</span></span>
+        <span class="chip live">현행</span>
+        <span class="doc-desc">경매·태인·앱 용어 풀이.</span>
+        <span class="doc-path">doc/guide/GLOSSARY.md</span>
       </a>
     </div>
   </section>
