@@ -4,7 +4,7 @@
 
 ## 결론 (3줄)
 
-1. **물건 데이터는 서버가 아니라 이 브라우저에 있다**(localStorage + IndexedDB). 클라우드(Supabase)를 연결하지 않았다면 다른 곳에는 없다.
+1. **물건 데이터는 서버가 아니라 이 브라우저에 있다**(IndexedDB, 설정은 localStorage). 클라우드(Supabase)를 연결하지 않았다면 다른 곳에는 없다.
 2. **수집한 원본 파일(태인 사진·문서 PDF 등)만 이 컴퓨터의 프로젝트 폴더 `private/collector/`에 있다.** git에는 올라가지 않는다.
 3. **물건 데이터는 브라우저 안(IndexedDB)과 브라우저 밖(이 컴퓨터 `private/backups/`)에 이중으로 자동 백업된다**(데이터 탭 → 백업·복구, 날짜별 복원). 브라우저 데이터가 지워져도 디스크 백업은 남는다. 사진·PDF·수집 원본 파일은 백업에 없다. 「처음부터 새로 시작」은 브라우저 안 백업만 지우고 디스크 백업은 남긴다.
 
@@ -12,10 +12,10 @@
 
 | 위치 | 무엇 | 지우는 방법 |
 | --- | --- | --- |
-| 브라우저 localStorage `auctionflow:v1` | ★ **실제 물건 데이터**: 물건, 임차인, 임대세팅, 분석, 체크리스트, 메모, 지식 노트, 강의 노트 편집본 | 데이터 탭 → 「처음부터 새로 시작」(물건만) 또는 물건 목록의 삭제 |
+| 브라우저 IndexedDB `auctionflow-app` → `auctionflow:v1` (예전에는 localStorage, 첫 실행 때 자동 이전) | ★ **실제 물건 데이터**: 물건, 임차인, 임대세팅, 분석, 체크리스트, 메모, 지식 노트, 강의 노트 편집본 | 데이터 탭 → 「처음부터 새로 시작」(물건만) 또는 물건 목록의 삭제 |
 | 브라우저 IndexedDB `auctionflow-case-media` | 물건별 원본 PDF, 태인 사진·그래프·**층별 평면도** 이미지, 임장 사진, 목록 썸네일 | 물건 삭제 시 함께 삭제 / 「처음부터 새로 시작」 |
 | 브라우저 IndexedDB `auctionflow-backups` | 물건 데이터 **백업**(자동·수동, JSON). 자동 최근 10개·수동 최근 20개. 사진·PDF 파일은 미포함 | 백업 목록의 삭제 / 「처음부터 새로 시작」 |
-| 이 컴퓨터 `private/backups/*.json.gz` | ★ 물건 데이터 **디스크 백업**(gzip). 앱 열 때·변경 15초 뒤·삭제 직전에 저장(같은 내용은 건너뜀). 최신 40개 + 48시간은 시간별 + 90일은 하루 1개. `peak.json.gz`는 물건이 가장 많았던 시점으로 정리에서 제외 | 폴더에서 파일 삭제(앱은 지우지 않음) |
+| 이 컴퓨터 `private/backups/*.json.gz` | ★ 물건 데이터 **디스크 백업**(gzip). 앱 열 때·변경 15초 뒤·삭제 직전에 저장(같은 내용은 건너뜀). 저장할 때마다 최신 5개만 남기고 나머지는 삭제. `peak.json.gz`는 물건이 가장 많았던 시점으로 정리에서 제외 | 폴더에서 파일 삭제(앱은 지우지 않음) |
 | 브라우저 IndexedDB `auctionflow-remodeling-images` | 리모델링 참고 사진 | 「처음부터 새로 시작」 |
 | 브라우저 localStorage — 설정 | `auctionflow:ui-settings`(화면 설정), `:screening-settings`(스크리닝 기준), `:news-settings`·`:news-cache`·`:news-scraps`(경매 소식), `:activity-log`·`:usage-log`(변동·사용 기록), `auctionflow-theme` 등 | 설정 화면의 각 「처음으로」, 기록 지우기 |
 | 이 컴퓨터 `private/collector/taein-media/<키>/` | 태인 상세에서 받은 사진·그래프·문서 5종 PDF·인쇄본 | 물건 「완전 삭제」, 「처음부터 새로 시작」 |
